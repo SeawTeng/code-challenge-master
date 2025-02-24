@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 360px;
+  font-family: 'Lucida Console', 'Courier New', monospace !important;
+  background: url('https://static.vecteezy.com/system/resources/previews/004/243/021/non_2x/abstract-template-background-white-and-bright-blue-squares-overlapping-with-halftone-and-texture-free-vector.jpg');
+}
+
+.exchange-box {
+  padding: 20px 27px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 17px -5px;
+  background-color: #f0f4f8;
+}
+
+.dropdown-menu {
+  overflow-y: scroll;
+  height: 300px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 10px;
+}
+
+#dropdown1,
+#dropdown2 {
+  min-width: 155px;
+}
+
+.swapForm {
+  border: 1px solid #004b87;
+  padding: 30px 25px;
+  border-radius: 10px;
+  background-color: #6a9bd16e;
+  box-shadow: 1px 1px 17px -5px;
+}

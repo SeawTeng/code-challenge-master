@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>Fancy Form</title>
+
+    <!-- You may add more stuff here -->
+    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
+    <div class="row">
+      <form class="swapForm" onsubmit="submitSwap()">
+        <h1 class="text-center mb-4">Swap</h1>
+        <div class="col-md-12 col-sm-12">
+          <div class="exchange-box">
+            <label for="input-amount"><b>Amount to send</b></label>
+            <div class="input-group mt-2 mb-2">
+              <input
+                type="text"
+                id="input-amount-1"
+                value="0"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0'); compute(this.value, 'dropdown1');"
+                class="form-control form-control-lg"
+                required
+              />
+              <button
+                class="btn btn-outline-secondary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="dropdown1"
+                type="button"
+              ></button>
+              <ul class="dropdown-menu" id="currencyList-1"></ul>
+            </div>
+            <span style="padding: 17px">$<span id="calculate1">0</span></span>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 mt-4">
+          <div class="exchange-box">
+            <label for="output-amount"><b>Amount to receive</b></label>
+            <div class="input-group mt-2 mb-2">
+              <input
+                type="text"
+                id="input-amount-2"
+                min="1"
+                value="0"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0'); compute(this.value, 'dropdown2');"
+                class="form-control form-control-lg"
+                required
+              />
+              <button
+                class="btn btn-outline-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                id="dropdown2"
+                aria-expanded="false"
+              >
+                SELECT TOKEN
+              </button>
+              <ul class="dropdown-menu" id="currencyList-2"></ul>
+            </div>
+            <span style="padding: 17px">$<span id="calculate2">0</span></span>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 mt-4 text-center">
+          <button type="submit" class="btn btn-dark w-100">CONFIRM SWAP</button>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
